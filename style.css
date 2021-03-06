@@ -1,0 +1,148 @@
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+.container 		{ 
+  font-family:'Roboto';
+  width:600px; 
+  margin:30px auto 0; 
+  display:block; 
+  background:#FFF;  
+  padding:10px 50px 50px;
+}
+.dark-container{
+  background:#222;
+  color: #fff;
+  font-family:'Roboto';
+  width:600px; 
+  margin:30px auto 0; 
+  display:block; 
+  padding:10px 50px 50px;
+}
+.button-dark{
+  background-image: url(icons/dark.png);
+  background-size: 70px 70px;
+  width: 64px;
+  height: 64px;
+  box-shadow: 3px 3px 5px 0px rgba(255,255,255,0.5);
+}
+.button-light{
+  background-image: url(icons/light.png);
+  background-size: 70px 70px;
+  width: 64px;
+  height: 64px;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.4);
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
+
+/* form starting stylings ------------------------------- */
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+.textarea-dark{
+  color:white;
+  background-color: #222;
+}
+input:focus 		{ outline:none; }
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+button {
+  position: relative;
+  overflow: hidden;
+  transition: background 400ms;
+  color: #fff;
+  background-color: #6200ee;
+  padding: 1rem 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  outline: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.4);
+}
+.button-dark2{
+  box-shadow: 3px 3px 5px 0px rgba(255,255,255,0.5);
+}
+
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.theme{
+  position: absolute;
+  top: 20px; left: 20px;
+}
